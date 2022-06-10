@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Simple Todo Application</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Todo List Application</h1>
+        <div class="row ">
+            <form action="" method="post" class="row g-3 d-flex justify-content-center">
+                <div class="col-auto">
+                  <label for="inputPassword2" class="visually-hidden">Todoitem</label>
+                  <input type="text" class="form-control" id="title" placeholder="Enter todo item" style="min-width:540px;" name="todoitem">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3">Add</button>
+                </div>
+              </form>
+        </div>
+        <div class="todolist d-flex justify-content-center">
+            <ul class="list-group flex" >
+                <% tasks.forEach(function(task){ %>
+                <li class="list-group-item d-flex  justify-content-center" style="min-width: 600px;">
+                    <%= task.tasks %>
+                        <a href="/task/<%= task._id %>" class="btn btn-primary">Edit</a>
+                    <a href="/delete/<%= task._id %>" class="btn btn-danger">Delete</a>
+                </li>
+                <% }); %>
+              </ul>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
